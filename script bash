@@ -1,4 +1,11 @@
+comparaciones en bash 
+gt significa mayor
+lt significa menor
 
+para que fuera lo que Nana Married Otacibas dice, sería
+
+ge mayor o igual
+le menor o igual.
 
 
 #ingresando scrip de for con if anidado y fucnonado 
