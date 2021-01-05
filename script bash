@@ -101,6 +101,9 @@ https://es.stackoverflow.com/questions/389238/python-xml-iterar-para-obtener-tod
 
 
 
+https://es.stackoverflow.com/questions/389238/python-xml-iterar-para-obtener-todos-los-hijos-de-un-elemento
+
+
 from xml.dom import minidom
 doc = minidom.parse("prueba.xml")
 nombre = doc.getElementsByTagName("TABLES")[0]
