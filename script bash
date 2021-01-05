@@ -97,4 +97,21 @@ https://docs.python.org/2/library/xml.etree.elementtree.html#supported-xpath-syn
 https://www.oracletutorial.com/python-oracle/inserting-data/
 https://riptutorial.com/es/python/example/20117/base-de-datos-oracle
 https://decodigo.com/python-leer-archivo-xml
+https://es.stackoverflow.com/questions/389238/python-xml-iterar-para-obtener-todos-los-hijos-de-un-elemento
 
+
+
+from xml.dom import minidom
+doc = minidom.parse("prueba.xml")
+nombre = doc.getElementsByTagName("TABLES")[0]
+print(nombre.firstChild.data)
+empleados = doc.getElementsByTagName("TABLE")
+for empleado in empleados:
+    sid = empleado.getAttribute("id")
+    username = empleado.getElementsByTagName("username")[0]
+    password = empleado.getElementsByTagName("password")[0]
+    print("id:%s " % sid)
+    print("username:%s" % username.firstChild.data)
+    print("password:%s" % password.firstChild.data)
+    
+    
