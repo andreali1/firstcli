@@ -117,4 +117,26 @@ for empleado in empleados:
     print("username:%s" % username.firstChild.data)
     print("password:%s" % password.firstChild.data)
     
-    
+ codfigo jalando lineas:
+ de las tablas
+ 
+ ##########################################
+ import xml.etree.ElementTree as ET
+tree = ET.parse('datos.xml')
+root = tree.getroot()
+#print(root)
+
+root.tag
+root.attrib
+for h in root:
+  print(h.attrib, h.tag )
+
+print(root[1].text)
+print("xxxxxxxxxxxxxx")
+for f in root.iter('TABLE'):
+  print(f.attrib)
+  for g in root.iter('ROW'):
+    print(g.attrib)
+print("\n holi ")
+ 
+ 
