@@ -72,3 +72,34 @@ for f in root.iter('TABLE'):
   #for j in root.iter('ROWDATA'):
     #print(j.attrib)
 
+
+
+#### nueva descompresion con identificacion de extension 
+
+#####--x-x-x-x-x-x-x-x-x--xx-x-x-x-xx-x-xx-
+#codigo parea listar archivos e identificar el tipo de extension y que se hace 
+#import os 
+#import os.path
+#os.getcwd()
+#obj = os.scandir('Gestores') 
+#a = []
+#for entry in obj :
+#  if entry.is_dir() or entry.is_file(): 
+#    a.append(entry.name)
+#print(a) 
+#obj.close() 
+#for h in a:
+#  nombre, extension = os.path.splitext(h)
+#  #print("El archivo '{}' se llama '{}' y tiene la extensión '{}'".format(h, nombre, extension))
+#  if extension == '.gz' or extension == '.7z' :
+#    print("archivo comprimido", extension)
+#  elif extension == '.xml':
+#    print("archiuvo xml", extension)
+#  elif extension == '.csv':
+#    print("archivo csv", extension)
+#  elif extension == '.DOCX':
+#    print("archivo word", extension)
+#  else:
+#    print("Extension sin determinar ", extension)
+
+
