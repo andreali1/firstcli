@@ -16,6 +16,16 @@
     #pass
 #archivo_zip.close()
 
+#codigo parea listar archivos 
+#import os 
+#obj = os.scandir('Gestores') 
+#for entry in obj : 
+#	if entry.is_dir() or entry.is_file(): 
+#		print(entry.name) 
+#obj.close() 
+
+
+
 
 
 
