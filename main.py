@@ -19,6 +19,10 @@ def despedida_usuarios():
     print('chau mundo ')
 
 @main.command()
+def despedida():
+    print('chau mundo ')
+
+@main.command()
 def calculadora():
     a = int(input("ingresa 1 numero "))
     b = int(input("ingresa otro numero "))

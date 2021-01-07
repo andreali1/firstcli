@@ -1,0 +1,193 @@
+pagina donde esta toda la explicaion de esto 
+
+************* https://bioinf.comav.upv.es/courses/unix/scripts_bash.html#condicionales-if *******
+comparaciones en bash 
+gt significa mayor
+lt significa menor
+
+para que fuera lo que Nana Married Otacibas dice, sería
+
+ge mayor o igual
+le menor o igual.
+
+
+#ingresando scrip de for con if anidado y fucnonado 
+#for v in carro moto avion bici
+#do 
+#    if [[ "$v" == "bici" ]]; then
+#    break
+#    fi
+#    echo "ciudad : $v"
+#done
+#echo "todo completo "
+
+
+
+
+#ingresando ciclo for en bash 
+#for v in  {1..7999} # hay mas metodo este solo ingresa d en un rango determinado 
+#peo se puede agregar el ranog y la cantuidad de incremento que va lleavr 
+#do 
+    #echo "numero : $v"
+#done el done es para poder cerrar el for sio todo continua y arroja error 
+
+
+#ejercicoo de if correcto cuidado con los espacio y lineas en las q se escribe el
+codigo por que es muy senssitive
+#echo "ingres un lado " 
+#read d # cuadno concatenas en otra  linea no sale error 
+#if [ $d = "dere" ]; # tener mucho cuidado con la separacion entre la condicion del if y los corchetes 
+#then
+#        echo "lado derecho"
+#fi
+
+
+
+
+#error hacer notas 
+#echo "ingres un lado " read d ## este script va dar erro cuando concatenas 
+#a la misma linea lo toma comoerror 
+#if [ $d = "dere" ];
+    #then
+       #echo "lado derecho"
+#fi
+
+
+
+
+#declarando variables y mostrando diferentes tipos de impresion 
+# mostrando tipos de concatenado y como se puede mostrar por consola los resultados 
+#edad=23
+#frase="hola mudno "
+#echo "con que inician los programadores con un --> "$frase
+#echo tengo en total $edad 
+#echo hola como estas 
+#echo "hola como vas "
+#echo $edad
+
+
+#declracion de variables en bash 
+#siempre las variables con valro asignado tienen q estar pegadas al igual , 
+tmb su valor como se muestra abajo
+#a=10  #declarando un valro entero 
+#b="hola mundo"   #declarando un string 
+
+
+#igresando la edad de una persona en una sola linea 
+read -p "introduce tu edad" A
+
+
+#ingresando la edad de una persona por puntos separados ingreso ye dad 
+#echo " ingresa una edad "
+#read a 
+#echo "la edad ingresada es "$a
+
+
+pagina de referencia para poder ver el tema https://computernewage.com/2019/01/13/scripting-linux-bash-crear-ejecutar-script/
+
+
+comando de linux rh 
+
+https://www.ochobitshacenunbyte.com/2018/12/04/los-42-comandos-mas-importantes-en-gnu-linux/
+-x--x-x-x-x-x-x-x-x-x-########################
+paginad de referencia para scrip percy 
+
+
+https://docs.python.org/2/library/xml.etree.elementtree.html#supported-xpath-syntax
+https://www.oracletutorial.com/python-oracle/inserting-data/
+https://riptutorial.com/es/python/example/20117/base-de-datos-oracle
+https://decodigo.com/python-leer-archivo-xml
+https://es.stackoverflow.com/questions/389238/python-xml-iterar-para-obtener-todos-los-hijos-de-un-elemento
+
+
+
+https://es.stackoverflow.com/questions/389238/python-xml-iterar-para-obtener-todos-los-hijos-de-un-elemento
+
+
+from xml.dom import minidom
+doc = minidom.parse("prueba.xml")
+nombre = doc.getElementsByTagName("TABLES")[0]
+print(nombre.firstChild.data)
+empleados = doc.getElementsByTagName("TABLE")
+for empleado in empleados:
+    sid = empleado.getAttribute("id")
+    username = empleado.getElementsByTagName("username")[0]
+    password = empleado.getElementsByTagName("password")[0]
+    print("id:%s " % sid)
+    print("username:%s" % username.firstChild.data)
+    print("password:%s" % password.firstChild.data)
+    
+ codfigo jalando lineas:
+ de las tablas
+ 
+ ##########################################
+ import xml.etree.ElementTree as ET
+tree = ET.parse('datos.xml')
+root = tree.getroot()
+#print(root)
+
+root.tag
+root.attrib
+for h in root:
+  print(h.attrib, h.tag )
+
+print(root[1].text)
+print("xxxxxxxxxxxxxx")
+for f in root.iter('TABLE'):
+  print(f.attrib)
+  for g in root.iter('ROW'):
+    print(g.attrib)
+print("\n holi ")
+ 
+ 
+ 
+ 
+--O-O-P-P-P-P-P-P-P
+
+
+
+#import xml.etree.ElementTree as ET
+#tree = ET.parse('datos.xml')
+#root = tree.getroot()
+#print(root)
+
+#root.tag
+#root.attrib
+#print(root.tag, root.attrib)
+
+#for f in root.iter('TABLE') :
+  #print(f.attrib)
+  #print("")
+  
+
+  
+  #for u in root.iter('ROWDATA'):
+    #print(u.attrib)
+    #for g in root.iter('ROW'):
+      #print(g.attrib)
+    #for y in root.iter('ROW'):
+      #print(y.attrib)
+  #print(g.attrib)
+#print("\n holi ")
+
+
+import xml.etree.ElementTree as ET
+tree = ET.parse('datos.xml')
+root = tree.getroot()
+#print(root)
+
+root.tag
+root.attrib
+for h in root:
+  print(h.attrib )
+
+  
+
+for f in root.iter('TABLE'):
+  print(f.attrib)
+  for g in root.iter('ROW'):
+    print(g.attrib)
+print("\n holi ")
+ 
+
+ 
