@@ -190,4 +190,7 @@ for f in root.iter('TABLE'):
 print("\n holi ")
  
 
- 
+#----o-o-o--oo---oo-o-o
+setup para la conexcion de python con BD ORACLE 
+
+https://oracle.github.io/python-cx_Oracle/samples/tutorial/Python-and-Oracle-Database-Scripting-for-the-Future.html#overview
