@@ -1,0 +1,156 @@
+#obteniendo al ruta del archiuvo a guradar 
+#import os
+#os.getcwd()
+#obteniendo ruta en jupyter con una sola linea 
+#%pwd
+
+#import xml.etree.ElementTree as ET
+#tree = ET.parse('datos.xml')
+#root = tree.getroot()
+#print(root)
+#root.tag
+#root.attrib
+#l = []
+#print(root.tag, root.attrib)
+#for i in root:
+  #print(i.tag, i.attrib)
+#print(ET.tostring(root, encoding='utf8').decode('utf8'))
+
+#for all in root.iter('ROW'):
+    #print(a.attrib)
+
+#for b in root.iter('ROW'):
+    #print(b.attrib)
+
+
+#for f in root.iter('TABLE') :
+  #print(f.attrib)
+  #b = f.attrib
+  #print(b['attrname'])
+  #l.append(b['attrname'])
+#print(l)
+#j = []
+#for i in l:
+  #print(i)
+  #for g in root.iter('ROW'):
+    #print(g.attrib)
+  #print("holi")
+
+
+
+#for u in l:
+  #print(u)
+  #for p in root.iter('ROW'):
+    #print(p.attrib)
+
+    #for t in root.iter('ROW'):
+      #print(t.attrib)
+      
+  #if u == l[0]:
+    #print("!ofgdsog")
+    #for q in root.iter('ROW'):
+      #print(q.attrib)
+  #elif u == l[1]:
+    #for p in root.iter('ROW'):
+      #print(p.attrib)
+  #elif u == l[2]:
+    #for p in root.iter('ROW'):
+      #print(p.attrib)
+  #else:
+    #print("fuera de rango ")
+  #elif u == 'Subrack':
+    #print('Subrack')
+    #break
+
+#for q in root.iter('ROW'):
+  #z = (q.attrib)
+  #print(type(z))
+
+
+
+
+
+  #for u in root.iter('ROW'):
+    #print(u.attrib)
+    #for g in root.iter('ROW'):
+      #print(g.attrib)
+    #for y in root.iter('ROW'):
+      #print(y.attrib)
+  #print(g.attrib)
+#print("\n holi ")
+
+
+#import xml.etree.ElementTree as ET
+#tree = ET.parse('datos.xml')
+#root = tree.getroot()
+#print(root)
+
+#root.tag
+#root.attrib
+#for h in root:
+#  print(h.attrib )
+
+  
+
+#for f in root.iter('TABLE'):
+#  print(f.attrib)
+#  for g in root.iter('ROW'):
+#    print(g.attrib)
+#print("\n holi ")
+
+
+#import zipfile
+#ruta_zip = "Gestores.zip"
+#ruta_extraccion = ""
+#password = None
+#archivo_zip = zipfile.ZipFile(ruta_zip, "r")
+#try:
+    #print(archivo_zip.namelist())
+    #archivo_zip.extractall(pwd=password, path=ruta_extraccion)
+#except:
+    #pass
+#archivo_zip.close()
+
+
+
+
+
+#####--x-x-x-x-x-x-x-x-x--xx-x-x-x-xx-x-xx-
+#codigo parea listar archivos e identificar el tipo de extension y que se hace 
+#import os 
+#import os.path
+#os.getcwd()
+#obj = os.scandir('Gestores') 
+#a = []
+#for entry in obj :
+#  if entry.is_dir() or entry.is_file(): 
+#    a.append(entry.name)
+#print(a) 
+#obj.close() 
+#for h in a:
+#  nombre, extension = os.path.splitext(h)
+#  #print("El archivo '{}' se llama '{}' y tiene la extensión '{}'".format(h, nombre, extension))
+#  if extension == '.gz' or extension == '.7z' :
+#    print("archivo comprimido", extension)
+#  elif extension == '.xml':
+#    print("archiuvo xml", extension)
+#  elif extension == '.csv':
+#    print("archivo csv", extension)
+#  elif extension == '.DOCX':
+#    print("archivo word", extension)
+#  else:
+#    print("Extension sin determinar ", extension)
+
+
+
+#################****************************************************
+segundo google colab 
+import xml.etree.ElementTree as ET
+tree = ET.parse('datos.xml')
+root = tree.getroot()
+root.tag
+root.attrib
+l = []
+for b in root.iter('ROW'):
+  h = (b.attrib)
+  print((h['UnitPosition']))
