@@ -1,0 +1,146 @@
+#PRIMERO MAS UTIL 
+#DESCOMPRIME Y MUEVE A UN CARPETA ESPECIFICA LOS ARCHIVOS XML PARA SU PROCESAMIENTO 
+import zipfile 
+import os
+import tarfile , gzip, shutil
+from datetime import datetime
+import xml.etree.ElementTree as ET
+import csv
+import errno
+#### cambios para recorrer todo desde cero 
+
+ruutta=os.getcwd()
+para_ruta= ('{}').format(ruutta)
+obj = os.scandir(para_ruta)
+a = []
+for entry in obj :
+  if entry.is_dir() or entry.is_file(): 
+    a.append(entry.name)
+#print(a) 
+obj.close() 
+for u in a:
+  nombre, extension = os.path.splitext(u)
+  if extension == '.zip' :
+    ruta_zip = u
+    new_ruta_zip = ruta_zip.split('.')[0]
+    try:
+      q = new_ruta_zip
+      fechamili = datetime.now()
+      fecha = fechamili.strftime("%d-%m-%Y (%H-%M-%S.%f)")
+      car = ("{} Fecha {}").format(q,fecha)
+      os.mkdir(car)
+    except OSError as e:
+      if e.errno != errno.EEXIST:
+        raise
+    ruutta = os.getcwd()
+    ruta_extraccion = "{}".format(ruutta)
+    password = None
+    archivo_zip = zipfile.ZipFile(ruta_zip, "r")
+    try:
+        #print(archivo_zip.namelist())
+        archivo_zip.extractall(pwd=password, path=ruta_extraccion)
+    except:
+        pass
+    archivo_zip.close()
+    os.getcwd()
+    para_ruta= ('{}/{}').format(ruutta,new_ruta_zip)
+    obj = os.scandir(para_ruta)
+    a = []
+    for entry in obj :
+      if entry.is_dir() or entry.is_file(): 
+        a.append(entry.name)
+    #print(a) 
+    obj.close() 
+    ruta = '{}/{}'.format(ruutta,new_ruta_zip)
+    #print(len(a))
+    for h in a:
+      nombre, extension = os.path.splitext(h)
+      if extension == '.7z' :
+        #print(".7z")
+        n = ( '7z x {} -{}/{}' ).format(h,ruutta,new_ruta_zip)
+        os.system(n)
+      elif extension == '.gz':
+        continue
+        #print("archivos GZ ",'---->',h)
+        #j = ('{}').format(h)
+        #print(j, "printer with J ")
+        #with gzip.open(j, 'rb') as f_in:
+          #o = ('{}').format(nombre)
+          #print(o)
+          #with open(o, 'wb') as f_out:
+            #shutil.copyfileobj(f_in, f_out)
+      else:
+        continue
+#----------------
+    for h in a:
+      nombre, extension = os.path.splitext(h)
+      if extension == '.xml':
+          #print("archiuvo xml", extension, h , nombre)
+          #print("antes de mover:") 
+          #print(os.listdir(ruta)) 
+          archivob = ('{}/{}/{}').format(ruutta,new_ruta_zip,h)
+          archivo = (archivob)
+          #print(archivo)
+          #cap_dest ruta 
+          cap_desta = ('{}/{}').format(ruutta,car)
+          cap_dest = (cap_desta)
+          #print("despues de mover:")
+          dest = shutil.move(archivo, cap_dest)  
+    #print(car, 'impresion --x--x-x-x-x-x-x-x-x')
+    new_rut = ('{}/{}').format(ruutta,car)
+    os.getcwd()
+    obj = os.scandir(new_rut) 
+    t = []
+    for entry in obj :
+      if entry.is_dir() or entry.is_file(): 
+        t.append(entry.name)
+    #print(t) 
+    obj.close() 
+
+#-l-l-l-l-l-l--l-l-l-ll
+    for v in t:
+      #print(v)
+      txt = ('{}/{}/{}').format(ruutta,car,v)
+      #archivo = open("data.csv", "a")
+      tree = ET.parse(txt)
+      root = tree.getroot()
+      root.tag
+      root.attrib
+      l = []
+      fechamiliz = datetime.now()
+      fechacasa = fechamiliz.strftime("%d-%m-%Y (%H-%M-%S.%f)")
+      no_file = ("{}/{}/data {} {}.csv").format(ruutta,car,fechacasa,v)
+      archivo = open(no_file, "a")
+      for f in root.iter('TABLE') :
+        b = f.attrib
+        l.append(b['attrname'])
+      j = []
+      data = {}
+      now = datetime.now()
+      l = []
+      for f in root.iter('TABLE') :
+        b = f.attrib
+        l.append(b['attrname'])
+      j = []
+      data = {}
+      for i in l:
+        #print(i)
+        for g in root.iter('ROW'):
+          #print((g.attrib))
+          archivo.write(str(i))
+          archivo.write(str(","))
+          archivo.write(str(b))
+          archivo.write(str(","))
+          archivo.write(str(j))
+          archivo.write(str(","))
+          archivo.write(str(f))
+          archivo.write(str(","))
+          archivo.write(str(l))
+          archivo.write("\n")
+      archivo.close()
+    abcd = datetime.now()
+
+#ELSE DEL EL INICIO DE RECONOCIMEINTO DE ARCHIVOS  DE LA LINEA   
+  else:
+    #print("es otro tipo de archivo ")
+    continue
